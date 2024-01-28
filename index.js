@@ -10,6 +10,7 @@ import { uploadImage } from "./utility_functions/uploadImage.js";
 import path from "path"
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import cors from "cors";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -24,6 +25,14 @@ mongodbConnect();
 // routes and middlewares start
 app.use(express.json());
 app.use(cookieParser());
+var corsOptions = {
+  origin: 'https://portfolio-abdulmalik-client.vercel.app',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions));
+
+
 app.use('/api/auth',userRouter)
 // upload project image 
 const upload =  uploadImage();
