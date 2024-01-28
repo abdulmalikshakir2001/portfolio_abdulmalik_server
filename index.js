@@ -19,6 +19,9 @@ const __dirname = dirname(__filename);
 
 
 const app = express()
+app.use(cors({
+  origin: 'https://portfolio-abdulmalik-client.vercel.app'
+}));
 dotenv.config();
 const port  =  process.env.PORT
 mongodbConnect();
@@ -27,7 +30,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-app.use(cors());
+
 
 
 app.use('/api/auth',userRouter)
