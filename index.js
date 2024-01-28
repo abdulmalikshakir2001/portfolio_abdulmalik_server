@@ -13,15 +13,12 @@ import { dirname } from 'path';
 import cors from "cors";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-
-
-
-
 const app = express()
 app.use(cors({
   origin: 'https://portfolio-abdulmalik-client.vercel.app'
 }));
+
+
 dotenv.config();
 const port  =  process.env.PORT
 mongodbConnect();
