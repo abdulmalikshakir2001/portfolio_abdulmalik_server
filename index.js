@@ -14,12 +14,9 @@ import cors from "cors";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express()
-app.use(cors({
-  origin: 'https://portfolio-abdulmalik-client.vercel.app',
-  "methods": "GET",
-  "optionsSuccessStatus": 204
 
-}));
+
+
 
 
 dotenv.config();
@@ -28,7 +25,7 @@ mongodbConnect();
 // routes and middlewares start
 app.use(express.json());
 app.use(cookieParser());
-app.options('*', cors()) // include before other routes
+
 
 app.use('/api/auth',userRouter)
 // upload project image 
