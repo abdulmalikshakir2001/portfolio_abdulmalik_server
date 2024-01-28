@@ -19,7 +19,7 @@ const app = express()
 app.use(cors(
   {
     origin:["https://portfolio-abdulmalik-client.vercel.app"],
-    methods:["POST","GET"],
+
     credentials:true
   }
 ))
