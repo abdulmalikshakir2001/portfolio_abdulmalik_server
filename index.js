@@ -19,7 +19,6 @@ const app = express()
 app.use(cors(
   {
     origin:["https://portfolio-abdulmalik-client.vercel.app"],
-
     credentials:true
   }
 ))
@@ -31,6 +30,9 @@ mongodbConnect();
 // routes and middlewares start
 app.use(express.json());
 app.use(cookieParser());
+app.use('/',(req,res,nex)=>{
+  return res.send('home page')
+})
 app.use('/api/auth',userRouter)
 // upload project image 
 const upload =  uploadImage();
