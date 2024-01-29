@@ -29,9 +29,7 @@ mongodbConnect();
 // routes and middlewares start
 app.use(express.json());
 app.use(cookieParser());
-app.use('/',(req,res)=>{
-  return res.json('home page');
-})
+
 app.use('/api/auth',userRouter)
 // upload project image 
 const upload =  uploadImage();
