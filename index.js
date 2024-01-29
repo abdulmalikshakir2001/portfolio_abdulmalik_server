@@ -14,7 +14,7 @@ import { dirname } from 'path';
 import cors from "cors";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const app = express()
+export const app = express();
 
 app.use(cors(
   {
@@ -48,6 +48,8 @@ app.use('/api/contact', contactRouter)
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
+
+
 
 
 
