@@ -9,7 +9,6 @@ import cookieParser   from  'cookie-parser';
 import { uploadImage } from "./utility_functions/uploadImage.js";
 import path from "path"
 import { fileURLToPath } from 'url';
-
 import { dirname } from 'path';
 import cors from "cors";
 const __filename = fileURLToPath(import.meta.url);
