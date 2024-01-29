@@ -31,7 +31,7 @@ mongodbConnect();
 app.use(express.json());
 app.use(cookieParser());
 app.use('/',(req,res,nex)=>{
-  return res.send('home page')
+  return res.json('home page');
 })
 app.use('/api/auth',userRouter)
 // upload project image 
