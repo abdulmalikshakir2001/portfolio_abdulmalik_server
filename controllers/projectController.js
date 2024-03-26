@@ -1,7 +1,7 @@
 import Project from "../models/projectModel.js";
 
 export  const  uploadProject = async (req,res,next) =>{
-    const  {title} = req.body;
+    const  {title,projectUrl} = req.body;
 
      if(!req.file) {
         return res.json({status:false,msg:"some thing went wrong"});
@@ -10,7 +10,7 @@ export  const  uploadProject = async (req,res,next) =>{
     
     const {filename} = req.file;
     // console.log(filename)
-    const projectUpload  =  await Project.create({ title,image:filename });
+    const projectUpload  =  await Project.create({ title,image:filename ,project_url:projectUrl});
     if(projectUpload){
         return res.json({status:true,msg:"project uploaded successfully"})
     }else{

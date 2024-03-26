@@ -5,6 +5,10 @@ const projectSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  project_url: {
+    type: String,
+    
+  },
   image: {
     type: String,
     required: true
