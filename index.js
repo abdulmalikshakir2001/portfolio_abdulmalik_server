@@ -7,11 +7,18 @@ import cors from 'cors';
 
 const app = express();
 dotenv.config();
+app.use(cors(
+    {
+      origin:["https://portfolio-abdulmalik-client.vercel.app/"],
+      credentials:true
+    }
+  ))
+  
 const port = process.env.PORT || 3001; 
 mongodbConnect();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
-app.use(cors());
+
 
 app.get('/', (req, res) => {
   res.send('Hello from Express server!');
