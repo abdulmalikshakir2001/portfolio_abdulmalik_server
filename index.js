@@ -9,7 +9,8 @@ const app = express();
 dotenv.config();
 app.use(cors(
     {
-      origin:["https://portfolio-abdulmalik-client.vercel.app/"],
+      origin:["https://portfolio-abdulmalik-client.vercel.app"],
+      
       credentials:true
     }
   ))
